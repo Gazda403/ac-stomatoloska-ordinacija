@@ -474,18 +474,16 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Hero visual */}
-              <div className="relative h-[200px] sm:h-[260px] lg:h-[600px] flex items-stretch gap-3 w-full mt-10 lg:mt-0">
-                {/* Large dental chair card (Desktop only) */}
-                <div className="hidden lg:block flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
+              {/* Hero visual (Desktop only) */}
+              <div className="hidden lg:flex relative lg:h-[600px] flex-1 items-stretch gap-3 w-full">
+                <div className="flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
                   <img
                     src="/images/hero.jpg"
                     alt="Stomatološka ordinacija A&C"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/hero-img:scale-105"
                   />
                 </div>
-                {/* 2 smaller cards (Stacked vertically on desktop, side-by-side on mobile) */}
-                <div className="flex flex-row lg:flex-col gap-3 w-full lg:w-44 lg:flex-shrink-0">
+                <div className="flex flex-col gap-3 w-44 flex-shrink-0">
                   <div className="flex-1 rounded-2xl border border-titanium-200 shadow-lg overflow-hidden relative group/c1">
                     <img src="/images/card1.jpg" alt="Digitalni Dizajn Osmijeha" className="w-full h-full object-cover transition-transform duration-700 group-hover/c1:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -512,6 +510,33 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Mobile-only floating cards below Hero, above Pillars */}
+        <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6 relative z-10 -mt-16 mb-12">
+          <div className="flex gap-3 h-[180px] sm:h-[220px]">
+            <div className="flex-1 rounded-2xl border border-titanium-200 shadow-lg overflow-hidden relative group/m-c1">
+              <img src="/images/card1.jpg" alt="Digitalni Dizajn Osmijeha" className="w-full h-full object-cover transition-transform duration-700 group-hover/m-c1:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <div className="w-3.5 h-3.5 rounded-full bg-accent/90 flex items-center justify-center">
+                    <Diamond size={8} className="text-white" />
+                  </div>
+                  <span className="text-[9px] text-accent font-semibold uppercase tracking-wide">Ordinacija A&amp;C</span>
+                </div>
+                <p className="text-[11px] text-white font-semibold leading-tight">Digitalni Dizajn Osmijeha</p>
+              </div>
+            </div>
+            <div className="flex-1 rounded-2xl border border-titanium-200 shadow-lg overflow-hidden relative group/m-c2">
+              <img src="/images/card2.jpg" alt="3D Skeniranje" className="w-full h-full object-cover transition-transform duration-700 group-hover/m-c2:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <p className="text-[9px] text-white/80 font-medium mb-0.5">3D Skeniranje</p>
+                <h4 className="text-lg font-display font-bold text-accent">0.01mm</h4>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* ── Pillars ── */}
         <section id="pristup" className="py-24 bg-white border-y border-titanium-100">
