@@ -472,7 +472,7 @@ export default function App() {
               </div>
 
               {/* Hero visual */}
-              <div className="absolute lg:relative inset-0 lg:inset-auto h-full lg:h-[600px] flex items-stretch gap-3 w-full opacity-20 lg:opacity-100 z-0 lg:z-10 pointer-events-none lg:pointer-events-auto">
+              <div className="absolute lg:relative inset-0 lg:inset-auto h-full lg:h-[600px] flex items-stretch gap-3 w-full opacity-50 lg:opacity-100 z-0 lg:z-10 pointer-events-none lg:pointer-events-auto">
                 <div className="flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
                   <img
                     src="/images/hero.jpg"
