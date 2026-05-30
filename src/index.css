@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alabaster: #F9FAFB;
+  --color-titanium-100: #F3F4F6;
+  --color-titanium-200: #E5E7EB;
+  --color-titanium-300: #D1D5DB;
+  --color-titanium-400: #9CA3AF;
+  --color-titanium-500: #6B7280;
+  --color-titanium-600: #4B5563;
+  --color-titanium-700: #374151;
+  --color-titanium-800: #1F2937;
+  --color-titanium-900: #111827;
+  --color-accent: #67AE6E;
+  --color-accent-light: #90C67C;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-alabaster text-titanium-900 antialiased font-sans selection:bg-accent selection:text-titanium-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-titanium-900;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-titanium-200 shadow-sm;
+  }
+  
+  .luxury-transition {
+    @apply transition-all duration-500 ease-out;
+  }
+}
