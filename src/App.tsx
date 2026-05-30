@@ -362,7 +362,7 @@ export default function App() {
       <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
 
       {/* ── Navbar ── */}
-      <nav className="sticky top-0 z-50 glass-panel border-b border-titanium-200">
+      <nav className="sticky top-0 z-[90] glass-panel border-b border-titanium-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
 
@@ -409,7 +409,7 @@ export default function App() {
 
       {/* ── Mobile Menu ── */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-titanium-200 absolute top-20 left-0 w-full z-40 shadow-xl">
+        <div className="md:hidden bg-white border-b border-titanium-200 absolute top-20 left-0 w-full z-[80] shadow-xl">
           <div className="px-4 pt-2 pb-6 space-y-1">
             <a href="#usluge"  onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-titanium-900 border-b border-titanium-100">Usluge</a>
             <a href="#pristup" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-titanium-900 border-b border-titanium-100">Pristup</a>
@@ -472,7 +472,7 @@ export default function App() {
               </div>
 
               {/* Hero visual */}
-              <div className="relative lg:h-[600px] flex items-stretch gap-3">
+              <div className="relative h-[380px] sm:h-[480px] lg:h-[600px] flex items-stretch gap-3 w-full">
                 <div className="flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
                   <img
                     src="/images/hero.jpg"
@@ -593,8 +593,10 @@ export default function App() {
                 ].map(({ id, heading, body, items, img, alt }) => (
                   <div
                     key={id}
-                    className={`absolute inset-0 bg-white border border-titanium-200 rounded-3xl p-8 md:p-12 shadow-sm luxury-transition flex flex-col md:flex-row gap-8 items-center ${
-                      activeTab === id ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-4 pointer-events-none z-0'
+                    className={`bg-white border border-titanium-200 rounded-3xl p-8 md:p-12 shadow-sm luxury-transition flex flex-col md:flex-row gap-8 items-center ${
+                      activeTab === id
+                        ? 'relative opacity-100 translate-y-0 z-10'
+                        : 'absolute inset-0 opacity-0 translate-y-4 pointer-events-none z-0'
                     }`}
                   >
                     <div className="md:w-1/2 space-y-6">
