@@ -436,24 +436,27 @@ export default function App() {
       <main className="flex-grow">
 
         {/* ── Hero ── */}
-        <section className="relative pt-24 pb-32 overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-titanium-200/50 blur-3xl opacity-50 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-titanium-300/30 blur-3xl opacity-50 pointer-events-none" />
+        <section className="relative pt-24 pb-32 overflow-hidden bg-[url(/images/hero.jpg)] bg-cover bg-center lg:bg-none">
+          {/* Mobile background overlay */}
+          <div className="absolute inset-0 bg-black/60 lg:hidden pointer-events-none" />
+          
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-titanium-200/50 blur-3xl opacity-50 pointer-events-none hidden lg:block" />
+          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-titanium-300/30 blur-3xl opacity-50 pointer-events-none hidden lg:block" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-              <div className="max-w-2xl relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-titanium-100 border border-titanium-200 mb-8">
+              <div className="max-w-2xl relative z-20">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 lg:bg-titanium-100 border border-white/20 lg:border-titanium-200 mb-8">
                   <span className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="text-xs font-medium tracking-wide text-titanium-700 uppercase">Premium Dental Clinic Sarajevo</span>
+                  <span className="text-xs font-medium tracking-wide text-titanium-100 lg:text-titanium-700 uppercase">Premium Dental Clinic Sarajevo</span>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-titanium-900">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-white lg:text-titanium-900">
                   Inženjering <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-titanium-700 to-titanium-500">Vašeg Osmijeha.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light lg:from-titanium-700 lg:to-titanium-500">Vašeg Osmijeha.</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-titanium-600 mb-10 leading-relaxed max-w-xl font-light">
+                <p className="text-lg md:text-xl text-titanium-200 lg:text-titanium-600 mb-10 leading-relaxed max-w-xl font-light">
                   Stomatološka ordinacija A&amp;C predstavlja vrhunac multidisciplinarne digitalne stomatologije.
                   Pružamo apsolutnu preciznost, estetsku perfekciju i bezkompromisni kvalitet.
                 </p>
@@ -465,22 +468,24 @@ export default function App() {
                   >
                     Zakažite termin <ArrowRight size={18} />
                   </button>
-                  <button className="bg-white text-accent border border-titanium-200 px-8 py-4 rounded-full text-base font-medium hover:bg-titanium-100 luxury-transition flex items-center justify-center gap-2">
-                    <Play size={18} className="text-titanium-500" /> Upoznajte Kliniku
+                  <button className="bg-white/10 lg:bg-white text-white lg:text-accent border border-white/20 lg:border-titanium-200 px-8 py-4 rounded-full text-base font-medium hover:bg-white/20 lg:hover:bg-titanium-100 luxury-transition flex items-center justify-center gap-2 backdrop-blur-sm">
+                    <Play size={18} className="text-white lg:text-titanium-500" /> Upoznajte Kliniku
                   </button>
                 </div>
               </div>
 
               {/* Hero visual */}
-              <div className="absolute lg:relative inset-0 lg:inset-auto h-full lg:h-[600px] flex items-stretch gap-3 w-full opacity-50 lg:opacity-100 z-0 lg:z-10 pointer-events-none lg:pointer-events-auto">
-                <div className="flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
+              <div className="relative h-[200px] sm:h-[260px] lg:h-[600px] flex items-stretch gap-3 w-full mt-10 lg:mt-0">
+                {/* Large dental chair card (Desktop only) */}
+                <div className="hidden lg:block flex-1 rounded-3xl border border-titanium-200 shadow-2xl overflow-hidden group/hero-img">
                   <img
                     src="/images/hero.jpg"
                     alt="Stomatološka ordinacija A&C"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover/hero-img:scale-105"
                   />
                 </div>
-                <div className="flex flex-col gap-3 w-36 lg:w-44 flex-shrink-0">
+                {/* 2 smaller cards (Stacked vertically on desktop, side-by-side on mobile) */}
+                <div className="flex flex-row lg:flex-col gap-3 w-full lg:w-44 lg:flex-shrink-0">
                   <div className="flex-1 rounded-2xl border border-titanium-200 shadow-lg overflow-hidden relative group/c1">
                     <img src="/images/card1.jpg" alt="Digitalni Dizajn Osmijeha" className="w-full h-full object-cover transition-transform duration-700 group-hover/c1:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
